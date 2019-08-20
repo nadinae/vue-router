@@ -51,3 +51,12 @@ History interface是浏览器历史记录栈提供的接口。可以通过go()�
 
 根据hash以上特点可以完成对页面的前进、后退等一系列的路由跳转工作。
 
+
+## history模式相对于hash模式的优势
+* pushState设置的新URL可以是与当前URL同源的任意URL；而hash只可修改#后面的部分，故只可设置与当前同文档的URL
+
+* pushState设置的新URL可以与当前URL一模一样，这样也会把记录添加到栈中；而hash设置的新值必须与原来不一样才会触发记录添加到栈中
+
+* pushState通过stateObject可以添加任意类型的数据到记录中；而hash只可添加短字符串
+
+* pushState可额外设置title属性供后续使用
